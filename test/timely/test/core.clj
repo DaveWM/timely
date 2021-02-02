@@ -55,4 +55,5 @@
   (is (= "* * * * *"     (schedule-to-cron (each-minute (start-time 0) (end-time (* (dates-coerce/to-long (dates/now)) 2))))))
   (is (= "* * * * *"     (schedule-to-cron (each-minute
                                             (start-time (to-utc-timestamp (dates/date-time 2012 5 15 11 42)))
-                                            (end-time (to-utc-timestamp (dates/date-time 2012 5 15 11 43))))))))
+                                            (end-time (to-utc-timestamp (dates/date-time 2012 5 15 11 43)))))))
+  (is (= "0 0 * * 6"     (schedule-to-cron (weekly (on (day-of-week :sat)))))))

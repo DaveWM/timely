@@ -155,7 +155,7 @@
    specified, a default day of Sunday and a default hour and minute of
    0 is used.  Filters available: at, on, each, start-time, end-time"
    [& filters]
-  (apply (partial create-schedule 0 0 :all :all 0) filters))
+  (apply (partial create-schedule 0 0 :all :all :sun) filters))
 
 (defn monthly
   "Create a schedule that runs once every month.  Optionally specify
